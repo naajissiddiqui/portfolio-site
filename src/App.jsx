@@ -36,7 +36,6 @@
 
 // export default App;
 
-import React from "react";
 import "./index.css";
 
 function App() {
