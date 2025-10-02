@@ -69,7 +69,9 @@ const Navbar = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-300 hover:text-[#8245ec]"
-          ></a>
+          >
+            <FaGithub size={24} />
+          </a>
         </div>
       </div>
     </nav>
