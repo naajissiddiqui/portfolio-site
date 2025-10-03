@@ -96,6 +96,26 @@ const Navbar = () => {
           )}
         </div>
       </div>
+
+      {/* Mobile Menu Items */}
+      {isOpen && (
+        <div className="absolute top-16 left-1/2 transform -translate-x-1/2 w-4/5 bg-[#050414] bg-opacity-50 backdrop-filter backdrop-blur-lg z-50 rounded-lg shadow-lg">
+          <ul className="flex flex-col items-center space-y-4 text-gray-300">
+            {menuItems.map((item) => (
+              <li
+                key={item.id}
+                className={`cursor-pointer hover:text-white ${
+                  activeSection === item.id ? "text-[#8245ec]" : ""
+                }`}
+              >
+                <button onClick={() => handleMenuItemClick(item.id)}>
+                  {item.label}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </nav>
   );
 };
