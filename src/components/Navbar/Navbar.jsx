@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
   const [isScrolled, setIsScrolled] = useState(false);
 
-  //Check scroll and change navbar bg
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -15,7 +15,6 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  //Smooth scroll function
   const handleMenuItemClick = (sectionId) => {
     setActiveSection(sectionId);
     setIsOpen(false);
@@ -28,31 +27,28 @@ const Navbar = () => {
     { id: "work", label: "Work" },
     { id: "education", label: "Education" },
   ];
+
   return (
     <nav
-      className={`fixed top-0 w-full z-50 transition duration-300 px-[7vw] lg:px-[20vw] ${
+      className={`fixed top-0 w-full z-50 transition duration-300 px-10 md:px-16 ${
         isScrolled
-          ? "bg-[#050414] bg-opacity-50 backdrop-blur-md shadow-md"
+          ? "bg-[#050414]/70 backdrop-blur-md shadow-md"
           : "bg-transparent"
-      } `}
+      }`}
     >
-      <div className="text-white py-5 flex justify-between items-center">
+      <div className="text-white py-3 flex justify-between items-center">
         {/* Logo */}
-        <div className="text-lg font-semibold cursor-pointer">
-          <span className="text-[#8245ec] text-xl">Naajis Siddiqui</span>
-
-          {/* <div>
-          <FaGithub className="text-white mx-2" />
-          <FaLinkedin className="text-white mx-2" />
-        </div> */}
+        <div className="cursor-pointer font-bold text-[#8245ec] text-3xl md:text-4xl tracking-wide">
+          &lt;Naajis&nbsp;Siddiqui/&gt;
         </div>
+
         {/* Desktop Menu */}
-        <ul className="md:flex space-x-8 text-gray-300">
+        <ul className="hidden md:flex space-x-10 text-gray-300 text-lg font-medium">
           {menuItems.map((item) => (
             <li
               key={item.id}
-              className={`cursor-pointer hover:text-[#8245ec] ${
-                activeSection == item.id ? "text-[#8245ec]" : ""
+              className={`cursor-pointer hover:text-[#8245ec] transition ${
+                activeSection === item.id ? "text-[#8245ec]" : ""
               }`}
             >
               <button onClick={() => handleMenuItemClick(item.id)}>
@@ -62,26 +58,27 @@ const Navbar = () => {
           ))}
         </ul>
 
-        {/* Scroll Media icons */}
-        <div className="hidden md:flex space-x-4">
+        {/* Social Icons */}
+        <div className="hidden md:flex space-x-5">
           <a
             href="https://github.com/naajissiddiqui"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-300 hover:text-[#8245ec]"
+            className="text-gray-300 hover:text-[#8245ec] transition"
           >
-            <FaGithub size={24} />
+            <FaGithub size={26} />
           </a>
           <a
-            href="https://github.com/naajissiddiqui"
+            href="https://linkedin.com/in/naajissiddiqui"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-300 hover:text-[#8245ec]"
+            className="text-gray-300 hover:text-[#8245ec] transition"
           >
-            <FaLinkedin size={24} />
+            <FaLinkedin size={26} />
           </a>
         </div>
-        {/* Mobile Menu Icons */}
+
+        {/* Mobile Menu Toggle */}
         <div className="md:hidden">
           {isOpen ? (
             <FiX
@@ -97,14 +94,14 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu Items */}
+      {/* Mobile Dropdown Menu */}
       {isOpen && (
-        <div className="absolute top-16 left-1/2 transform -translate-x-1/2 w-4/5 bg-[#050414] bg-opacity-50 backdrop-filter backdrop-blur-lg z-50 rounded-lg shadow-lg">
-          <ul className="flex flex-col items-center space-y-4 text-gray-300">
+        <div className="absolute top-16 left-1/2 transform -translate-x-1/2 w-4/5 bg-[#050414]/80 backdrop-blur-lg z-50 rounded-lg shadow-lg py-5">
+          <ul className="flex flex-col items-center space-y-4 text-gray-300 text-lg font-medium">
             {menuItems.map((item) => (
               <li
                 key={item.id}
-                className={`cursor-pointer hover:text-white ${
+                className={`cursor-pointer hover:text-[#8245ec] transition ${
                   activeSection === item.id ? "text-[#8245ec]" : ""
                 }`}
               >
@@ -113,6 +110,24 @@ const Navbar = () => {
                 </button>
               </li>
             ))}
+            <div className="flex space-x-5 pt-3">
+              <a
+                href="https://github.com/naajissiddiqui"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-[#8245ec]"
+              >
+                <FaGithub size={26} />
+              </a>
+              <a
+                href="https://linkedin.com/in/naajissiddiqui"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-[#8245ec]"
+              >
+                <FaLinkedin size={26} />
+              </a>
+            </div>
           </ul>
         </div>
       )}
