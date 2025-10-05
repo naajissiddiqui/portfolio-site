@@ -30,20 +30,20 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 w-full z-50 transition duration-300 px-10 md:px-16 ${
+      className={`fixed top-0 w-full z-50 transition duration-300 px-12 md:px-20 ${
         isScrolled
           ? "bg-[#050414]/70 backdrop-blur-md shadow-md"
           : "bg-transparent"
       }`}
     >
-      <div className="text-white py-3 flex justify-between items-center">
+      <div className="text-white py-4 flex justify-between items-center">
         {/* Logo */}
-        <div className="cursor-pointer font-bold text-[#8245ec] text-3xl md:text-4xl tracking-wide">
+        <div className="cursor-pointer font-bold text-[#8245ec] text-4xl md:text-5xl tracking-wide">
           &lt;Naajis&nbsp;Siddiqui/&gt;
         </div>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex space-x-10 text-gray-300 text-lg font-medium">
+        <ul className="hidden md:flex space-x-12 text-gray-300 text-xl font-semibold">
           {menuItems.map((item) => (
             <li
               key={item.id}
@@ -59,14 +59,14 @@ const Navbar = () => {
         </ul>
 
         {/* Social Icons */}
-        <div className="hidden md:flex space-x-5">
+        <div className="hidden md:flex space-x-6">
           <a
             href="https://github.com/naajissiddiqui"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-300 hover:text-[#8245ec] transition"
           >
-            <FaGithub size={26} />
+            <FaGithub size={30} />
           </a>
           <a
             href="https://linkedin.com/in/naajissiddiqui"
@@ -74,7 +74,7 @@ const Navbar = () => {
             rel="noopener noreferrer"
             className="text-gray-300 hover:text-[#8245ec] transition"
           >
-            <FaLinkedin size={26} />
+            <FaLinkedin size={30} />
           </a>
         </div>
 
@@ -82,12 +82,12 @@ const Navbar = () => {
         <div className="md:hidden">
           {isOpen ? (
             <FiX
-              className="text-3xl text-[#8245ec] cursor-pointer"
+              className="text-4xl text-[#8245ec] cursor-pointer"
               onClick={() => setIsOpen(false)}
             />
           ) : (
             <FiMenu
-              className="text-3xl text-[#8245ec] cursor-pointer"
+              className="text-4xl text-[#8245ec] cursor-pointer"
               onClick={() => setIsOpen(true)}
             />
           )}
@@ -96,8 +96,8 @@ const Navbar = () => {
 
       {/* Mobile Dropdown Menu */}
       {isOpen && (
-        <div className="absolute top-16 left-1/2 transform -translate-x-1/2 w-4/5 bg-[#050414]/80 backdrop-blur-lg z-50 rounded-lg shadow-lg py-5">
-          <ul className="flex flex-col items-center space-y-4 text-gray-300 text-lg font-medium">
+        <div className="absolute top-20 left-1/2 transform -translate-x-1/2 w-4/5 bg-[#050414]/90 backdrop-blur-lg z-50 rounded-xl shadow-lg py-6">
+          <ul className="flex flex-col items-center space-y-5 text-gray-300 text-xl font-semibold">
             {menuItems.map((item) => (
               <li
                 key={item.id}
@@ -110,14 +110,14 @@ const Navbar = () => {
                 </button>
               </li>
             ))}
-            <div className="flex space-x-5 pt-3">
+            <div className="flex space-x-6 pt-3">
               <a
                 href="https://github.com/naajissiddiqui"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-300 hover:text-[#8245ec]"
               >
-                <FaGithub size={26} />
+                <FaGithub size={30} />
               </a>
               <a
                 href="https://linkedin.com/in/naajissiddiqui"
@@ -125,7 +125,7 @@ const Navbar = () => {
                 rel="noopener noreferrer"
                 className="text-gray-300 hover:text-[#8245ec]"
               >
-                <FaLinkedin size={26} />
+                <FaLinkedin size={30} />
               </a>
             </div>
           </ul>
