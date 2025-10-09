@@ -1,6 +1,10 @@
 import React from "react";
 
-const BlurBlob = () => {
+const BlurBlob = ({ position, size }) => {
+  //Destructurring position and size
+  const { top, left } = position;
+  const { width, height } = size;
+
   return (
     <div
       className="absolute "
@@ -11,8 +15,14 @@ const BlurBlob = () => {
         height: height,
         transform: "translate(-50%, -50%)",
       }}
-    ></div>
+    >
+      <div className="w-full h-full bg-purple-500 rounded-full opacity-20 blur-3xl animate-blob"></div>
+    </div>
   );
 };
 
+//Define prop types
+BlurBlob.propTypes = {
+  position: PropTypes.shape({}),
+};
 export default BlurBlob;
