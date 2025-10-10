@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import React from "react";
 
 const BlurBlob = ({ position, size }) => {
@@ -23,6 +24,13 @@ const BlurBlob = ({ position, size }) => {
 
 //Define prop types
 BlurBlob.propTypes = {
-  position: PropTypes.shape({}),
+  position: PropTypes.shape({
+    top: PropTypes.string,
+    left: PropTypes.string,
+  }),
+  size: PropTypes.shape({
+    width: PropTypes.string,
+    height: PropTypes.string,
+  }),
 };
 export default BlurBlob;
