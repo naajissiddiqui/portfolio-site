@@ -4,20 +4,17 @@ const About = () => {
   return (
     <section
       id="about"
-      className="py-4 px-[7vw] md:px-[7vw] lg:px-[20vw] font-sans mt-16 md:mt-24 lg:mt-32"
+      className="flex flex-col justify-center items-center text-center py-20 px-[7vw] md:px-[10vw] lg:px-[20vw] font-sans mt-24 md:mt-32"
     >
-      <div className="flex flex-col-reverse md:flex-row justify-between items-center">
-        <div className="md:w-1 text-center md:text-center mt-8 md:mt-0">
-          {/* Greeting */}
-          <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold text-white mb-2 leading-tight">
-            Hi, I am
-          </h1>
-          {/* Name */}
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4 leading-tight">
-            Naajis Siddiqui
-          </h2>
-        </div>
-      </div>
+      {/* Greeting */}
+      <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight">
+        Hi, I am
+      </h1>
+
+      {/* Name */}
+      <h2 className="text-5xl sm:text-6xl md:text-7xl font-bold text-[#8245ec] mt-2 leading-tight">
+        Naajis Siddiqui
+      </h2>
     </section>
   );
 };
