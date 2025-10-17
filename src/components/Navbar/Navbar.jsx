@@ -38,8 +38,8 @@ const Navbar = () => {
     >
       <div className="text-white py-4 flex justify-between items-center">
         {/* Logo */}
-        <div className="cursor-pointer font-bold text-[#8245ec] text-4xl md:text-5xl tracking-wide">
-          &lt;Naajis&nbsp;Siddiqui/&gt;
+        <div className="cursor-pointer font-bold text-[#8245ec] text-xl md:text-3xl tracking-wide">
+          Naajis Siddiqui
         </div>
 
         {/* Desktop Menu */}
