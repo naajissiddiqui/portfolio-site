@@ -43,6 +43,9 @@ const About = () => {
           target="_blank"
           rel="noopener noreferrer"
           className="inline-block text-white py-3 px-8 rounded-full mt-5 text-lg font-bold transition duration-300"
+          style={{
+            background: "linear-gradient",
+          }}
         ></a>
       </div>
     </section>
