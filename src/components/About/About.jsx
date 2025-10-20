@@ -38,6 +38,12 @@ const About = () => {
           now. My passion lies in creating seamless and engaging digital
           experiences that will get me a job maybe. huh...
         </p>
+        <a
+          href="https://drive.google.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block text-white py-3 px-8 rounded-full mt-5 text-lg font-bold transition duration-300"
+        ></a>
       </div>
     </section>
   );
