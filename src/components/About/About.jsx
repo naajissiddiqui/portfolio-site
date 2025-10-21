@@ -1,6 +1,6 @@
 import React from "react";
-import ReactTypingEffect from "react-typing-effect";
 
+import { TypeAnimation } from "react-type-animation";
 const About = () => {
   return (
     <section
@@ -20,16 +20,20 @@ const About = () => {
 
         {/* Skills heading with typing effect */}
         <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold mb-4 text-[#8245ec] leading-tight">
-          <span className="text-white">I am a</span>
-          <ReactTypingEffect>
-            text={[" Full-Stack Developer.", " UI?UX Designer", " Coder."]}
-            speed={100}
-            eraseSpeed={50}
-            typingDelay={500}
-            eraseDelay={2000}
-            cursorRenderer=
-            {(cursor) => <span className="text-[#8245ec]">{cursor}</span>}
-          </ReactTypingEffect>
+          <span className="text-white">I am a </span>
+          <TypeAnimation
+            sequence={[
+              "Full-Stack Developer.",
+              2000,
+              "UI/UX Designer.",
+              2000,
+              "Coder.",
+              2000,
+            ]}
+            wrapper="span"
+            speed={50}
+            repeat={Infinity}
+          />
         </h3>
 
         <p className="text-base sm:text-lg md:text-gray-400 mb-10 mt-8 leading-relaxed">
@@ -44,9 +48,12 @@ const About = () => {
           rel="noopener noreferrer"
           className="inline-block text-white py-3 px-8 rounded-full mt-5 text-lg font-bold transition duration-300"
           style={{
-            background: "linear-gradient",
+            background: "linear-gradient(90deg, #8245ec, #a855f7)",
+            boxShadow: "0 0 2px #8245ec, 0 0 2px #8245ec, 0 0 40px #8245ec",
           }}
-        ></a>
+        >
+          DOWNLOAD CV
+        </a>
       </div>
     </section>
   );
