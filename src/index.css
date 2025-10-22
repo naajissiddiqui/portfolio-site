@@ -9,3 +9,7 @@ body {
   font-weight: 700; /* bold */
   font-style: normal; /* non-italic */
 }
+
+html {
+  scroll-behavior: smooth;
+}
