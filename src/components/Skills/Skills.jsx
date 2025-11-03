@@ -1,6 +1,6 @@
 import React from "react";
 import { SkillsInfo } from "../../constants";
-
+import Tilt from "react-parallax-tilt";
 const Skills = () => {
   return (
     <section
@@ -28,24 +28,34 @@ const Skills = () => {
             <h3 className="text-2xl sm:text-3xl font-semibold text-gray-400 mb-4 text-center">
               {category.title}
             </h3>
-
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 w-full">
-              {category.skills.map((skill) => (
-                <div
-                  key={skill.name}
-                  className="flex items-center justify-center space-x-2 bg-transparent border-2 border-gray-700 rounded-2xl py-2 px-2"
-                >
-                  <img
-                    src={skill.logo}
-                    alt={skill.name}
-                    className="w-6 h-6 sm:w-8 sm:h-8"
-                  />
-                  <span className="text-white text-sm sm:text-base">
-                    {skill.name}
-                  </span>
-                </div>
-              ))}
-            </div>
+            {/* 3 skills per row */}
+            <Tilt
+              className="w-48 h-48 sm:w-64 md:w-[30rem] md:h-[30rem] border-4 border-purple-700 rounded-full "
+              tiltMaxAngleX={20}
+              tiltMaxAngleY={20}
+              perspective={1000}
+              scale={1.05}
+              transitionSpeed={1000}
+              gyroscope={true}
+            >
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 w-full">
+                {category.skills.map((skill) => (
+                  <div
+                    key={skill.name}
+                    className="flex items-center justify-center space-x-2 bg-transparent border-2 border-gray-700 rounded-2xl py-2 px-2"
+                  >
+                    <img
+                      src={skill.logo}
+                      alt={skill.name}
+                      className="w-6 h-6 sm:w-8 sm:h-8"
+                    />
+                    <span className="text-xs sm:text-sm text-gray-300">
+                      {skill.name}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </Tilt>
           </div>
         ))}
       </div>
