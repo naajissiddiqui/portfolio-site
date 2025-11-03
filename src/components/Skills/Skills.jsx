@@ -30,7 +30,7 @@ const Skills = () => {
             </h3>
             {/* 3 skills per row */}
             <Tilt
-              className="w-48 h-48 sm:w-64 md:w-[30rem] md:h-[30rem] border-4 border-purple-700 rounded-full "
+              key={category.title}
               tiltMaxAngleX={20}
               tiltMaxAngleY={20}
               perspective={1000}
